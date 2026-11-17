@@ -1,5 +1,9 @@
 # LevaLeva – sammen på tur
 
+Repository: https://github.com/tatiiyna12-cell/levaleva
+
+Nettsted: https://tatiiyna12-cell.github.io/levaleva/
+
 Komplett frontend-demo på norsk bokmål. Innlevering: **22. november 2026 kl. 23:59**. Lever GitHub-repository-lenken.
 
 ## Kjør lokalt
@@ -57,7 +61,7 @@ Før innlevering: kontroller tomme/ugyldige skjemafelt, tastaturnavigasjon, en t
 5. Vent på publisering og åpne adressen GitHub viser, vanligvis `https://BRUKERNAVN.github.io/levaleva/`.
 6. Test alle tre sider. Lever repository-lenken `https://github.com/BRUKERNAVN/levaleva`; legg gjerne ved nettstedet også.
 
-Relative lenker fungerer under repository-undermapper. `.nojekyll` er inkludert. Node-serveren brukes kun lokalt. Prosjektet er ikke publisert av assistenten.
+Relative lenker fungerer under repository-undermapper. `.nojekyll` er inkludert. Node-serveren brukes kun lokalt. Prosjektet er publisert på GitHub og GitHub Pages.
 
 Offisiell veiledning: [Creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 
