@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Trimturer med LevaLeva i Levanger. Finn en tur og bli kjent med nærmiljøet.">
+<meta name="theme-color" content="#153d4a">
+<title>Opprett ny tur | LevaLeva</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="module" src="js/app.js">
+</script>
+</head>
+<body data-page="create">
+<a class="skip" href="#main">Hopp til innhold</a>
+<header class="site-header">
+<a class="brand" href="index.html" aria-label="LevaLeva – forsiden">
+<img src="assets/levaleva-logo.png" alt="LevaLeva lege og tannlege">
+<span>LevaLeva<small>HELSESENTER · LEVANGER</small>
+</span>
+</a>
+<nav aria-label="Hovedmeny">
+<a data-page="home" href="index.html">Hjem</a>
+<a data-page="trips" href="turer.html">Finn en tur</a>
+<a data-page="create" href="ny-tur.html">For ansatte <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</header>
+<main id="main">
+<section class="page-heading">
+<p class="eyebrow">FOR ANSATTE</p>
+<h1>En ny tur starter her.</h1>
+<p>Planlegg en god opplevelse for pasientene våre.</p>
+</section>
+<div class="form-layout">
+<form id="new-trip">
+<div class="form-heading">
+<span class="step">01</span>
+<div>
+<h2>Om turen</h2>
+<p>Alle felt er obligatoriske, unntatt ekstra informasjon.</p>
+</div>
+</div>
+<label>Navn på tur<input name="title" required maxlength="80" placeholder="F.eks. Rolig tur langs fjorden">
+</label>
+<div class="field-row">
+<label>Dato<input name="date" type="date" required>
+</label>
+<label>Klokkeslett<input name="time" type="time" required value="10:00">
+</label>
+</div>
+<div class="field-row">
+<label>Varighet i minutter<input name="duration" type="number" min="10" max="600" step="5" value="60" required>
+</label>
+<label>Antall plasser<input name="capacity" type="number" min="1" max="100" value="15" required>
+</label>
+</div>
+<label>Turleder<input name="leader" maxlength="80" required placeholder="Navn på turleder">
+</label>
+<div class="form-heading second">
+<span class="step">02</span>
+<div>
+<h2>Rute og praktisk informasjon</h2>
+<p>Gjør det enkelt å møte forberedt.</p>
+</div>
+</div>
+<label>Oppmøtested<input name="start" maxlength="160" required placeholder="F.eks. hovedinngangen ved LevaLeva">
+</label>
+<label>Hvor går turen?<input name="route" maxlength="200" required placeholder="F.eks. LevaLeva → havna → LevaLeva">
+</label>
+<label>Tempo<select name="pace">
+<option>Rolig</option>
+<option>Moderat</option>
+<option>Friskt</option>
+</select>
+</label>
+<label class="checkbox">
+<input name="accessible" type="checkbox"> Tilrettelagt for rullestolbrukere</label>
+<label>Ekstra informasjon <span class="optional">(valgfritt)</span>
+<textarea name="info" maxlength="1000" rows="4" placeholder="Pauser, underlag, hva deltakerne bør ta med …">
+</textarea>
+</label>
+<div class="form-actions">
+<button class="button" type="submit">Lagre demotur <span>→</span>
+</button>
+<button type="reset" class="secondary">Nullstill</button>
+</div>
+<p id="form-status" role="status">
+</p>
+</form>
+<aside>
+<p class="eyebrow">FØR DU LAGRER</p>
+<h2>En trygg ramme<br>for en god tur.</h2>
+<ul>
+<li>Velg et tydelig oppmøtested.</li>
+<li>Tilpass antall plasser til turen.</li>
+<li>Beskriv underlag og tilgjengelighet.</li>
+<li>Legg inn tid til en liten pause.</li>
+</ul>
+<div class="demo-note">
+<strong>Kun en demonstrasjon</strong>
+<p>Turen lagres midlertidig i denne nettleserfanen og vises i kalenderen. Ingenting sendes til et helsesenter.</p>
+<p>Ansattinnlogging og publisering kobles til en backend senere. Ikke legg inn sensitive opplysninger.</p>
+</div>
+</aside>
+</div>
+</main>
+<footer>
+<a class="footer-brand" href="index.html">LevaLeva<span>Små steg. Gode opplevelser.</span>
+</a>
+<p>Lege og tannlege · Levanger<br>Skoleprosjekt · Alle turer og opplysninger er demonstrasjonsdata.</p>
+</footer>
+<dialog id="trip-dialog" aria-labelledby="dialog-title">
+<button class="close" type="button" aria-label="Lukk turdetaljer">×</button>
+<div id="dialog-content">
+</div>
+</dialog>
+</body>
+</html>

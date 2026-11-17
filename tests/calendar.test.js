@@ -1,0 +1,9 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {monday,addDays,weekNumber,todayKey,weatherEligible,makeDemoTours,available,canJoin} from '../js/data.js';
+test('Monday and Sunday anchor to the same ISO week',()=>{assert.equal(monday('2026-11-17'),'2026-11-16');assert.equal(monday('2026-11-22'),'2026-11-16');});
+test('Navigation crosses month, year and leap boundaries',()=>{assert.equal(addDays('2026-12-28',7),'2027-01-04');assert.equal(addDays('2024-02-28',1),'2024-02-29');assert.equal(addDays(addDays('2026-11-16',7),-7),'2026-11-16');assert.equal(weekNumber('2027-01-01'),53);});
+test('Calendar uses Oslo day even when UTC date differs',()=>assert.equal(todayKey(new Date('2026-11-16T23:30:00Z')),'2026-11-17'));
+test('Four-day weather window includes today through day three',()=>{assert.equal(weatherEligible('2026-11-17','2026-11-17'),true);assert.equal(weatherEligible('2026-11-20','2026-11-17'),true);assert.equal(weatherEligible('2026-11-21','2026-11-17'),false);assert.equal(weatherEligible('2026-11-16','2026-11-17'),false);});
+test('Full and past tours cannot be joined',()=>{const t={date:'2026-11-17',time:'10:00',capacity:10,booked:10};assert.equal(available(t),0);assert.equal(canJoin(t,new Date('2026-11-17T08:00Z')),false);t.booked=0;assert.equal(canJoin(t,new Date('2026-11-17T08:00Z')),true);assert.equal(canJoin(t,new Date('2026-11-17T10:00Z')),false);});
+test('Demo dataset covers current/next week, all details and unique ids',()=>{const ts=makeDemoTours('2026-11-17');assert.equal(new Set(ts.map(t=>t.id)).size,ts.length);for(const key of ['2026-11-16','2026-11-23'])assert.ok(ts.some(t=>monday(t.date)===key));for(const t of ts)for(const field of ['title','date','time','leader','start','route','duration','capacity','info'])assert.ok(t[field]);assert.ok(ts.some(t=>available(t)===0));assert.ok(ts.some(t=>available(t)>0));});

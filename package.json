@@ -1,0 +1,1 @@
+{"name":"levaleva-frontend","version":"1.0.0","private":true,"type":"module","description":"Tilgjengelig frontend-demo for LevaLeva trimturer","scripts":{"start":"node server.js","test":"node --test tests/*.test.js"},"engines":{"node":">=20"}}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Trimturer med LevaLeva i Levanger. Finn en tur og bli kjent med nærmiljøet.">
+<meta name="theme-color" content="#153d4a">
+<title>Finn en tur | LevaLeva</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="module" src="js/app.js">
+</script>
+</head>
+<body data-page="trips">
+<a class="skip" href="#main">Hopp til innhold</a>
+<header class="site-header">
+<a class="brand" href="index.html" aria-label="LevaLeva – forsiden">
+<img src="assets/levaleva-logo.png" alt="LevaLeva lege og tannlege">
+<span>LevaLeva<small>HELSESENTER · LEVANGER</small>
+</span>
+</a>
+<nav aria-label="Hovedmeny">
+<a data-page="home" href="index.html">Hjem</a>
+<a data-page="trips" href="turer.html">Finn en tur</a>
+<a data-page="create" href="ny-tur.html">For ansatte <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</header>
+<main id="main">
+<section class="page-heading">
+<p class="eyebrow">UT PÅ TUR MED LEVALEVA</p>
+<h1>Finn din neste tur.</h1>
+<p>Velg en tur i kalenderen og les mer. Vi tar turen sammen.</p>
+</section>
+<div class="notice">
+<span aria-hidden="true">ⓘ</span>
+<p>Planer kan endre seg. Sjekk tidspunkt og oppmøtested før du går.<br>
+<small>Dette er en demo. Påmelding og innlogging med ID-porten er ikke aktivert.</small>
+</p>
+</div>
+<section class="calendar-section" aria-label="Turkalender">
+<div class="calendar-toolbar">
+<div>
+<p class="eyebrow">TURKALENDER</p>
+<h2 id="calendar-range">
+</h2>
+</div>
+<div class="calendar-controls">
+<button id="prev" aria-label="Forrige uke">←</button>
+<button id="today">Denne uka</button>
+<button id="next" aria-label="Neste uke">→</button>
+</div>
+</div>
+<p class="calendar-hint">To uker om gangen · Trykk på en tur for detaljer</p>
+<div id="calendar" aria-live="polite">
+</div>
+<div class="legend">
+<span>
+<i>
+</i> Ledige plasser</span>
+<span>
+<i class="full-dot">
+</i> Fullbooket</span>
+<span>Tidene vises i norsk lokal tid.</span>
+</div>
+</section>
+<section class="small-banner">
+<h2>Plass til ulike behov.</h2>
+<p>Se etter «Tilrettelagt» i turbeskrivelsen. Turlederen hjelper deg med å finne et tempo som passer.</p>
+</section>
+</main>
+<footer>
+<a class="footer-brand" href="index.html">LevaLeva<span>Små steg. Gode opplevelser.</span>
+</a>
+<p>Lege og tannlege · Levanger<br>Skoleprosjekt · Alle turer og opplysninger er demonstrasjonsdata.</p>
+</footer>
+<dialog id="trip-dialog" aria-labelledby="dialog-title">
+<button class="close" type="button" aria-label="Lukk turdetaljer">×</button>
+<div id="dialog-content">
+</div>
+</dialog>
+</body>
+</html>
